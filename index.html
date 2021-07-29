@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>INSTAPIC</title>
+</head>
+<body>
+    <h3>RAKOTOMALALA Ponina Aromanda IMTICIA5</h3>
+    <div id="A">
+        <h3>INSTAPIC</h3>
+        <img src="img/image.jpg" alt="Tomb raider">
+        <input type="text" v-model='temp'>
+        <button v-on:click="comme(temp)">Commenter</button>
+        <div class="coms" v-for="commentaire in commentaires">
+            {{commentaire}}
+        </div>
+    </div>
+    <script>
+        var app =new Vue({
+            el:"#A",
+            data:{
+                temp:"",
+                commentaires:[],
+            },
+            methods:{
+                comme: function(temp){
+                    this.commentaires.push(temp) ;
+                    this.temp="" ;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
